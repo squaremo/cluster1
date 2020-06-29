@@ -1,0 +1,13 @@
+apiVersion: kpt.dev/v1alpha1
+kind: Kptfile
+metadata:
+    name: tekton-triggers
+upstream:
+    type: git
+    git:
+        commit: 649180b0e5f637b837607a9d5fd443d2cd912aea
+        repo: https://github.com/cuttlefacts/packages
+        directory: /tekton-triggers
+        ref: master
+packageMetadata:
+    shortDescription: Tekton Triggers base configuration
