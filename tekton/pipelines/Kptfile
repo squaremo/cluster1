@@ -1,0 +1,13 @@
+apiVersion: kpt.dev/v1alpha1
+kind: Kptfile
+metadata:
+    name: tekton-pipelines
+upstream:
+    type: git
+    git:
+        commit: ac56d557a59c1a765076802b6822475c7312f327
+        repo: https://github.com/cuttlefacts/packages
+        directory: /tekton-pipelines
+        ref: master
+packageMetadata:
+    shortDescription: Base install of Tekton Pipelines
