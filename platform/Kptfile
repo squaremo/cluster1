@@ -5,7 +5,7 @@ metadata:
 upstream:
     type: git
     git:
-        commit: 432f372c57adcf8bde4d144b49e0de92fee65183
+        commit: d6688c446990d55bb9f60a5e51ac7274330aa3b4
         repo: https://github.com/cuttlefacts/packages
         directory: /platform/app-harness
         ref: master
