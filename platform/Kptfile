@@ -1,0 +1,11 @@
+apiVersion: kpt.dev/v1alpha1
+kind: Kptfile
+metadata:
+    name: platform
+upstream:
+    type: git
+    git:
+        commit: 432f372c57adcf8bde4d144b49e0de92fee65183
+        repo: https://github.com/cuttlefacts/packages
+        directory: /platform/app-harness
+        ref: master
