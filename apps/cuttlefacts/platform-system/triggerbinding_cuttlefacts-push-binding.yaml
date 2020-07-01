@@ -1,0 +1,17 @@
+apiVersion: tekton.dev/v1alpha1
+kind: TriggerBinding
+metadata:
+  name: cuttlefacts-push-binding
+  namespace: platform-system
+spec:
+  params:
+  - name: gitrepositoryurl
+    value: https://github.com/cuttlefacts/cuttlefacts-app.git
+  - name: dockerfile
+    value: src/Dockerfile
+  - name: path
+    value: src/
+  - name: imagename
+    value: cuttlefacts/cuttlefacts-app:$(body.head_commit.id)
+  - name: serviceaccount
+    value: cuttlefacts-sa
