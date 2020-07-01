@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /cuttlefacts
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
   name: cuttlefacts
   namespace: cuttlefacts
 spec:
@@ -12,4 +12,4 @@ spec:
       - backend:
           serviceName: cuttlefacts
           servicePort: 8080
-        path: /
+        path: /cuttlefacts(/|$)(.*)
