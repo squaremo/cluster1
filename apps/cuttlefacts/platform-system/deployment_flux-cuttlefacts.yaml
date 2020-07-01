@@ -45,8 +45,8 @@ spec:
           timeoutSeconds: 5
         resources:
           requests:
-            cpu: 50m
-            memory: 64Mi
+            cpu: 100m
+            memory: 90Mi
       nodeSelector:
         beta.kubernetes.io/os: linux
       serviceAccountName: flux-cuttlefacts

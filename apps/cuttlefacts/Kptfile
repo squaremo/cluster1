@@ -5,7 +5,7 @@ metadata:
 upstream:
     type: git
     git:
-        commit: d6688c446990d55bb9f60a5e51ac7274330aa3b4
+        commit: 4e12ac64f257739a10222d8817639732e802b823
         repo: https://github.com/cuttlefacts/packages
         directory: /platform/app-template
         ref: master
