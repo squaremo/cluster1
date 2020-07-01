@@ -1,0 +1,24 @@
+apiVersion: tekton.dev/v1alpha1
+kind: EventListener
+metadata:
+  name: cuttlefacts-merge-listener
+  namespace: platform-system
+spec:
+  serviceAccountName: cuttlefacts-sa
+  serviceType: ClusterIP
+  triggers:
+  - bindings:
+    - name: github-push-binding
+    - name: cuttlefacts-push-binding
+    interceptors:
+    - github:
+        eventTypes:
+        - push
+        secretRef:
+          secretKey: key
+          secretName: cuttlefacts-github-secret
+    - cel:
+        filter: body.ref == 'refs/heads/master'
+    name: master-merge
+    template:
+      name: build-image-template

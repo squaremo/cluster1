@@ -1,0 +1,13 @@
+apiVersion: kpt.dev/v1alpha1
+kind: Kptfile
+metadata:
+    name: app-template
+upstream:
+    type: git
+    git:
+        commit: d6688c446990d55bb9f60a5e51ac7274330aa3b4
+        repo: https://github.com/cuttlefacts/packages
+        directory: /platform/app-template
+        ref: master
+packageMetadata:
+    shortDescription: Package to specialise the app pipeline for each app
