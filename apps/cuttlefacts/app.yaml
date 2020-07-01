@@ -31,5 +31,5 @@ spec:
   ingress:
     # URL path under which to serve the app
     path: /cuttlefacts
-    serviceName: cuttlefuss
+    serviceName: cuttlefacts
     servicePort: 8080
