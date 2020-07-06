@@ -21,6 +21,6 @@ spec:
     # not end with it (it gets interpolated into a pattern)
     prefix: /cuttlefacts
     # name of the service to forward requests to
-    serviceName: service
+    serviceName: cuttlefacts
     # port on the service to forward requests to
     servicePort: 8080

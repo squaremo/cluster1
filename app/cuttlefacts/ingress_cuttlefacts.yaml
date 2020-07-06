@@ -10,6 +10,6 @@ spec:
   - http:
       paths:
       - backend:
-          serviceName: service
+          serviceName: cuttlefacts
           servicePort: 8080
         path: /cuttlefacts(/|$)(.*)
