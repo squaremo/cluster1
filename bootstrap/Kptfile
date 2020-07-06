@@ -1,0 +1,31 @@
+apiVersion: kpt.dev/v1alpha1
+kind: Kptfile
+metadata:
+  name: flux-readonly
+upstream:
+  type: git
+  git:
+    commit: 17eb97503b965a261264fffcb7b93c098a39545e
+    repo: https://github.com/cuttlefacts/packages
+    directory: /flux-readonly
+    ref: 17eb975
+openAPI:
+  definitions:
+    io.k8s.cli.setters.git-url:
+      x-k8s-cli:
+        setter:
+          name: git-url
+          value: https://github.com/squaremo/cluster1
+    io.k8s.cli.setters.namespace:
+      x-k8s-cli:
+        setter:
+          name: namespace
+          value: bootstrap-system
+    io.k8s.cli.substitutions.git-url-arg:
+      x-k8s-cli:
+        substitution:
+          name: git-url-arg
+          pattern: --git-url=GIT_URL
+          values:
+          - marker: GIT_URL
+            ref: '#/definitions/io.k8s.cli.setters.git-url'
