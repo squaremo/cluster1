@@ -1,0 +1,20 @@
+apiVersion: kpt.dev/v1alpha1
+kind: Kptfile
+metadata:
+  name: nginx-ingress
+upstream:
+  type: git
+  git:
+    commit: 2f4bc248ad2a40269e9eace54dfea991df853804
+    repo: https://github.com/cuttlefacts/packages
+    directory: /nginx-ingress
+    ref: master
+packageMetadata:
+  shortDescription: An Nginx-based ingress controller
+openAPI:
+  definitions:
+    io.k8s.cli.setters.namespace:
+      x-k8s-cli:
+        setter:
+          name: namespace
+          value: platform-system
