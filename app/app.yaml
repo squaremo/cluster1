@@ -1,0 +1,26 @@
+# This is the manifest that gives parameters for the generation
+# process.
+apiVersion: cuttlefacts/v1
+kind: AppDeploy
+metadata:
+  annotations:
+    config.kubernetes.io/function: |
+      container:
+        image: cuttlefacts/app-template:0.2.2
+    fluxcd.io/ignore: true
+  name: cuttlefacts
+  namespace: cuttlefacts
+spec:
+  deploy:
+    # Path to the YAMLs, within the deploy git repo
+    path: deploy/
+    # HTTPS URL to the git repo with app deployment YAMLs
+    url: https://github.com/squaremo/cuttlefacts-app.git
+  ingress:
+    # URL path under which to serve the app; must start with '/' but
+    # not end with it (it gets interpolated into a pattern)
+    prefix: /cuttlefacts
+    # name of the service to forward requests to
+    serviceName: service
+    # port on the service to forward requests to
+    servicePort: 8080

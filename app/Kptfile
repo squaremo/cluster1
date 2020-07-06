@@ -1,0 +1,13 @@
+apiVersion: kpt.dev/v1alpha1
+kind: Kptfile
+metadata:
+    name: app-deploy
+upstream:
+    type: git
+    git:
+        commit: 2f4bc248ad2a40269e9eace54dfea991df853804
+        repo: https://github.com/cuttlefacts/packages
+        directory: /app-deploy
+        ref: master
+packageMetadata:
+    shortDescription: Template for deploying an app
